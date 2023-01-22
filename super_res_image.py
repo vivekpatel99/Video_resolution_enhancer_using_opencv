@@ -1,3 +1,6 @@
+"""
+python super_res_image.py --model models/LapSRN_x4.pb  --image examples/wallpaper.jpg
+"""
 import argparse
 import time
 import cv2

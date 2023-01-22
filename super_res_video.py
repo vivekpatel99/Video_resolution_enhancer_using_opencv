@@ -1,3 +1,6 @@
+"""
+python super_res_video.py --model models/ESPCN_x4.pb --video examples/sample.mp4
+"""
 import argparse
 import time
 import cv2
