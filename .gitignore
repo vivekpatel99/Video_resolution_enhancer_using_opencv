@@ -1,0 +1,10 @@
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/Video_resolution_enhancer_using_opencv.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+examples/*
+examples/sample.mp4
+examples/wallpaper.jpg
+output/wallpaper_high.png
