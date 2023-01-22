@@ -8,7 +8,7 @@ Used deep learning models
 * FSRCNN: [Accelerating the Super-Resolution Convolutional Neural Network](https://arxiv.org/abs/1608.00367),  [implementation](https://github.com/Saafke/FSRCNN_Tensorflow)
 * LapSRN: [Fast and Accurate Image Super-Resolution with Deep Laplacian Pyramid Networks](https://arxiv.org/abs/1710.01992),  [implementation](https://github.com/fannymonori/TF-LAPSRN)
 
-## HoWTo use the script
+## HowTo use the script
 1. clone the repo
 2. add input images or video in examples dir
 3. check models in model dir, if you want to add other model then you download it from github repo of pretrained model
@@ -17,6 +17,7 @@ Used deep learning models
     `python super_res_image.py --model models/<modelname>.pb  --image examples/<imagename>`  \
    for video \
    `python super_res_video.py --model models/<modelname>.pb --video examples/<video_clip_name>` 
+5. Generated output will be in output dir
 
 
 ## Reference

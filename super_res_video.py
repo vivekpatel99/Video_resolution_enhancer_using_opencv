@@ -19,7 +19,7 @@ ap.add_argument(
 )
 args = vars(ap.parse_args())
 input_video = args['video']
-video_name, input_video_ext = args["image"].split(os.path.sep)[-1].split('.')
+video_name, input_video_ext = args["video"].split(os.path.sep)[-1].split('.')
 
 # extract the model name and model scale from the file path
 modelName = args["model"].split(os.path.sep)[-1].split("_")[0].lower()
@@ -37,17 +37,25 @@ sr.readModel(args["model"])
 sr.setModel(modelName, modelScale)
 
 cap = cv2.VideoCapture(input_video)
-
+out = None
 while cap.isOpened():
     # catpure frame-by-frame
     ret, frame = cap.read()
     if ret == True:
 
         # Display the resulting frame
-        cv2.imshow('Frame', frame)
+        # cv2.imshow('Frame', frame)
         upscaled = sr.upsample(frame)
-        cv2.imshow('Frame', upscaled)
 
+        frameWidth = upscaled.shape[1]
+        frameHeight = upscaled.shape[0]
+        # Write the frame into the file
+        # Define the codec and create VideoWriter object.The output is stored in a file.
+        out = cv2.VideoWriter('output/output.avi',
+                              cv2.VideoWriter_fourcc(*"MJPG"),
+                              30,
+                              (frameWidth, frameHeight))
+        out.write(upscaled)
         # Press Q on keyboard to  exit
         if cv2.waitKey(25) & 0xFF == ord('q'):
             break
@@ -58,6 +66,6 @@ while cap.isOpened():
 
 # When everything done, release the video capture object
 cap.release()
-
+out.release()
 # Closes all the frames
 cv2.destroyAllWindows()
