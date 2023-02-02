@@ -21,7 +21,7 @@ Used deep learning models
 
 
 ## Future Ideas
-* add audio from sample/input video clip to output video file to complete the whole project. 
+* Add audio from sample/input video clip to output video file to complete the whole project. 
 
 ## Reference
 * https://pyimagesearch.com/2020/11/09/opencv-super-resolution-with-deep-learning/
