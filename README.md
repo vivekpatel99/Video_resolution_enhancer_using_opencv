@@ -10,7 +10,7 @@ Used deep learning models
 
 ## HowTo use the script
 1. clone the repo
-2. create dir name with example and output
+2. create 2 dirs with the name of example and output
 3. add input images or video in examples dir
 4. check models in model dir, if you want to add other model then you download it from github repo of pretrained model
 5. run following command to run the script
