@@ -20,6 +20,10 @@ Used deep learning models
 5. Generated output will be in output dir
 
 
+## Future Ideas
+* add audio from sample/input video clip to output video file to complete the whole project. 
+
 ## Reference
 * https://pyimagesearch.com/2020/11/09/opencv-super-resolution-with-deep-learning/
 * https://bleedai.com/super-resolution-going-from-3x-to-8x-resolution-in-opencv/
+
