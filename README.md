@@ -10,14 +10,15 @@ Used deep learning models
 
 ## HowTo use the script
 1. clone the repo
-2. add input images or video in examples dir
-3. check models in model dir, if you want to add other model then you download it from github repo of pretrained model
-4. run following command to run the script
+2. create dir name with example and output
+3. add input images or video in examples dir
+4. check models in model dir, if you want to add other model then you download it from github repo of pretrained model
+5. run following command to run the script
    for Image \
     `python super_res_image.py --model models/<modelname>.pb  --image examples/<imagename>`  \
    for video \
    `python super_res_video.py --model models/<modelname>.pb --video examples/<video_clip_name>` 
-5. Generated output will be in output dir
+6. Generated output will be in output dir
 
 
 ## Future Ideas
