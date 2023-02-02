@@ -40,30 +40,30 @@ sr.readModel(args["model"])
 sr.setModel(modelName, modelScale)
 
 cap = cv2.VideoCapture(input_video)
-out = None
+
+ret, frame = cap.read()
+
+upscaled = sr.upsample(frame)
+frame_width = int(upscaled.shape[1])
+frame_height = int(upscaled.shape[0])
+
+# Write the frame into the file
+# Define the codec and create VideoWriter object.The output is stored in a file.
+out = cv2.VideoWriter('output/output.mp4',
+                      cv2.VideoWriter_fourcc(*'mp4v'),
+                      30,
+                      (frame_width, frame_height))
+
 while cap.isOpened():
     # catpure frame-by-frame
     ret, frame = cap.read()
-    if ret == True:
-
+    if ret:
         # Display the resulting frame
         # cv2.imshow('Frame', frame)
         upscaled = sr.upsample(frame)
-
-        frameWidth = upscaled.shape[1]
-        frameHeight = upscaled.shape[0]
-        # Write the frame into the file
-        # Define the codec and create VideoWriter object.The output is stored in a file.
-        out = cv2.VideoWriter('output/output.avi',
-                              cv2.VideoWriter_fourcc(*"MJPG"),
-                              30,
-                              (frameWidth, frameHeight))
         out.write(upscaled)
-        # Press Q on keyboard to  exit
-        if cv2.waitKey(25) & 0xFF == ord('q'):
-            break
+        print(f"{frame.shape[1]} {frame.shape[0]} -> {upscaled.shape[1]} {upscaled.shape[0]}")
 
-    # Break the loop
     else:
         break
 
